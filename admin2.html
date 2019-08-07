@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome Admin</title>
+</head>
+<style>
+ * {
+ padding: 0;
+ margin: 0;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'HelveticaNeue', sans-serif;
+ }
+   .header {
+   background-color: darkslategray;
+   color: white;
+   font-size: 20px;
+   text-align: center;
+   }
+   .adminpanel
+   {
+       background-color: green;
+       height: 38px;
+       margin-left: 15px;
+       font-size: 19px;
+       text-align: center;
+       width: 350px;
+       color: white;
+   }
+   .container {
+   border: 2px solid lightgray;
+   width: 1100px;
+   margin-left: 15px;
+   margin-top: 21px;
+   height: 850px;
+   }
+   .container-element
+   {
+       margin-left: 15px;
+       margin-right: 15px;
+   }
+   #usn
+   {
+       width: 300px;
+       height: 30px;
+       font-size: 15px;
+   }
+   #studentname
+   {
+   width: 300px;
+   height: 30px;
+   font-size: 15px;
+   }
+   .name-container
+   {
+       margin-top: -60px;
+       margin-left: 355px;
+   }
+   .marks
+   {
+    width: 250px;
+    height: 25px;
+    font-size: 12px;
+   }
+   .gradenotice
+   {
+       border: 2px solid red;
+       border-style: dashed;
+       width: 450px;
+       height: 30px;
+   }
+   .btn
+   {
+       padding: 15px;
+       font-size: 15px;
+       border: none;
+       outline: none;
+       cursor: pointer;
+       background-color: green;
+       color: white;
+   }
+ </style>
+ <script>
+  function verify1(){
+      var s1in = document.getElementById("subject1in").value;
+      var s1ex = document.getElementById("subject1ex").value;
+      var s1res = parseInt(s1in) + parseInt(s1ex);
+      if(!isNaN(s1res)){
+          document.getElementById("subject1to").value = s1res
+      }
+      if(s1in < 12 || s1ex < 28){
+          document.getElementById("subject1gr").value = "F";
+      }
+      else
+      {
+          document.getElementById("subject1gr").value = "P";
+      }
+  }
+  function verify2() {
+        var s2in = document.getElementById("subject2in").value;
+        var s2ex = document.getElementById("subject2ex").value;
+        var s2res = parseInt(s2in) + parseInt(s2ex);
+        if (!isNaN(s2res)) {
+            document.getElementById("subject2to").value = s2res
+        }
+        if (s2in < 12 || s2ex < 28) {
+            document.getElementById("subject2gr").value = "F";
+        }
+        else {
+            document.getElementById("subject2gr").value = "P";
+        }
+    }
+    function verify3() {
+            var s3in = document.getElementById("subject3in").value;
+            var s3ex = document.getElementById("subject3ex").value;
+            var s3res = parseInt(s3in) + parseInt(s3ex);
+            if (!isNaN(s3res)) {
+                document.getElementById("subject3to").value = s3res
+            }
+            if (s3in < 12 || s3ex < 28) {
+                document.getElementById("subject3gr").value = "F";
+            }
+            else {
+                document.getElementById("subject3gr").value = "P";
+            }
+        }
+     function verify4() {
+            var s4in = document.getElementById("subject4in").value;
+            var s4ex = document.getElementById("subject4ex").value;
+            var s4res = parseInt(s4in) + parseInt(s4ex);
+            if (!isNaN(s4res)) {
+                document.getElementById("subject4to").value = s4res
+            }
+            if (s4in < 12 || s4ex < 28) {
+                document.getElementById("subject4gr").value = "F";
+            }
+            else {
+                document.getElementById("subject4gr").value = "P";
+            }
+        }    
+     function verify5() {
+            var s5in = document.getElementById("subject5in").value;
+            var s5ex = document.getElementById("subject5ex").value;
+            var s5res = parseInt(s5in) + parseInt(s5ex);
+            if (!isNaN(s5res)) {
+                document.getElementById("subject5to").value = s5res
+            }
+            if (s5in < 12 || s5ex < 28) {
+                document.getElementById("subject5gr").value = "F";
+            }
+            else {
+                document.getElementById("subject5gr").value = "P";
+            }
+        }    
+    function verify6() {
+            var s6in = document.getElementById("subject6in").value;
+            var s6ex = document.getElementById("subject6ex").value;
+            var s6res = parseInt(s6in) + parseInt(s6ex);
+            if (!isNaN(s6res)) {
+                document.getElementById("subject6to").value = s6res
+            }
+            if (s6in < 12 || s6ex < 28) {
+                document.getElementById("subject6gr").value = "F";
+            }
+            else {
+                document.getElementById("subject6gr").value = "P";
+            }
+        }    
+ </script>
+<body>
+  <form method="POST" action="action.php">
+   <div class="header">
+       <h1>Welcome to ABC Institute of Technology</h1>
+   </div><br>
+   <div class="adminpanel">
+     <h2>  Welcome to Admin-Block</h2>
+   </div>
+   <div class="container">
+      <div class="container-element">
+          <h3 style="color: red;">Please fill the details carefully.</h3><br>
+          <h3>Enter Student's USN</h3>
+          <input type="text" name="stuusn" id="usn" autocomplete="off" maxlength="10">
+           <div class="name-container">
+          <h3>Enter Student's Name</h3>
+          <input type="text" name="stuname" id="studentname">
+          </div><br>
+          <div class="gradenotice">
+            <center>
+           <p><b>Note : </b>Total marks and Result will be calculated automatically.</p>
+         </center>
+          </div><br>
+           <h3>Subject 1</h3>
+           <p>
+           <input type="number" size="2" name="sub1in" id="subject1in" class="marks" onkeyup="verify1()" placeholder="Internal Marks">
+           <input type="number" size="2" name="sub1ex" id="subject1ex" class="marks" onkeyup="verify1()" placeholder="External Marks">
+           <input type="number" id="subject1to" name="sub1tot" class="marks"  placeholder="Total Marks">
+           <input type="text" name="sub1gr" id="subject1gr" class="marks"  placeholder="Result">
+           </p><br><hr><br>
+           <h3>Subject 2</h3>
+           <p>
+               <input type="number" size="2" name="sub2in" id="subject2in" class="marks" onkeyup="verify2()" placeholder="Internal Marks">
+               <input type="number" size="2" name="sub2ex" id="subject2ex" class="marks" onkeyup="verify2()" placeholder="External Marks">
+               <input type="number" id="subject2to" name="sub2tot" class="marks" placeholder="Total Marks">
+               <input type="text" id="subject2gr" name="sub2gr" class="marks" placeholder="Result">
+           </p><br>
+           <hr><br>
+           <h3>Subject 3</h3>
+           <p>
+               <input type="number" size="2" name="sub3in" id="subject3in" class="marks" onkeyup="verify3()" placeholder="Internal Marks">
+               <input type="number" size="2" id="subject3ex" name="sub3ex" class="marks" onkeyup="verify3()" placeholder="External Marks">
+               <input type="number" id="subject3to" name="sub3tot" class="marks" placeholder="Total Marks">
+               <input type="text" id="subject3gr" name="sub3gr" class="marks" placeholder="Result">
+           </p><br>
+           <hr><br>
+           <h3>Subject 4</h3>
+           <p>
+               <input type="number" size="2" id="subject4in" name="sub4in" class="marks" onkeyup="verify4()" placeholder="Internal Marks">
+               <input type="number" size="2" id="subject4ex" name="sub4ex" class="marks" onkeyup="verify4()" placeholder="External Marks">
+               <input type="number" id="subject4to" name="sub4tot" class="marks" placeholder="Total Marks">
+               <input type="text" id="subject4gr" name="sub4gr" class="marks" placeholder="Result">
+           </p><br>
+           <hr><br>
+           <h3>Subject 5</h3>
+           <p>
+               <input type="number" size="2" id="subject5in" name="sub5in" class="marks" onkeyup="verify5()" placeholder="Internal Marks">
+               <input type="number" size="2" id="subject5ex" name="sub5ex" class="marks" onkeyup="verify5()" placeholder="External Marks">
+               <input type="number" id="subject5to" class="marks" name="sub5tot" placeholder="Total Marks">
+               <input type="text" id="subject5gr" name="sub5gr" class="marks" placeholder="Result">
+           </p><br>
+           <hr><br>
+           <h3>Subject 6</h3>
+           <p>
+               <input type="number" size="2" id="subject6in" name="sub6in" class="marks" onkeyup="verify6()" placeholder="Internal Marks">
+               <input type="number" size="2" id="subject6ex" name="sub6ex" class="marks" onkeyup="verify6()" placeholder="External Marks">
+               <input type="number" id="subject6to" class="marks" name="sub6tot" placeholder="Total Marks">
+               <input type="text" id="subject6gr" class="marks" name="sub6gr" placeholder="Result">
+           </p><br>
+           <input type="checkbox" id="check">I have entered the details correctly and i am responsible for any mistake in the entered data.
+      </div><br>
+      <center>
+          <input type="submit" value="Submit" class="btn">
+      </center>
+   </div>
+ </form>
+</body>
+</html>
